@@ -14,7 +14,7 @@ SALES_TAX_RATE = 0.062
 SERVICE_FEE = 0.10
 
 PR_ADULT = 19.95
-PR_CHIILD = 11.95
+PR_CHILD = 11.95
 
 #define global variables
 num_adult = num_child = 0
@@ -45,7 +45,7 @@ def get_user_data():
 
 def perform_calculations():
     global subtotal, serv_fee, sales_tax, total
-    subtotal = (num_adult * PR_ADULT) + (num_child * PR_CHIILD)
+    subtotal = (num_adult * PR_ADULT) + (num_child * PR_CHILD)
     serv_fee = subtotal * SERVICE_FEE
     sales_tax = subtotal * SALES_TAX_RATE
     total = subtotal + sales_tax + serv_fee
@@ -56,7 +56,7 @@ def display_result():
     print('**** Your neighborhood BBQ :) ****')
     print('----------------------------------')
     print('Adults                  $ ' + format(num_adult * PR_ADULT, '8,.2f'))
-    print('Children                $ ' + format(num_child * PR_CHIILD, '8,.2f'))
+    print('Children                $ ' + format(num_child * PR_CHILD, '8,.2f'))
     print('Subtotal                $ ' + format(subtotal, '8,.2f'))
     print('Service Fee             $ ' + format(serv_fee, '8,.2f'))
     print('Sales Tax               $ ' + format(sales_tax, '8,.2f'))
