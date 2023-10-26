@@ -31,16 +31,19 @@ def main():
     while more:
         get_user_data()
 
-        if pet_type.upper() == "D":
+        if pet_type.upper() == "D" or pet_type.upper() == "DOG":
             get_dog_data()
             perform_dog_calculations()
             display_dog_results()
 
 
-        else:
+        elif pet_type.upper() == "C" or pet_type.upper() == "CAT":
             get_cat_data()
             perform_cat_calculations()
             display_cat_results()  
+
+        else:
+            print("\nInvalid Pet-Type.")
 
         askAgain = input("\nWould you like to process another pet (Y/N)?: ")
         if askAgain.upper() == "N":
@@ -56,14 +59,15 @@ def get_user_data():
 ##Dog Functions##
 
 def get_dog_data():
-    global pet_vax_type, num_chews
-    dog1 = "\n** Dog Vaccines: \n\t1.Bordatella \n\t2.DAPP \n\t3.Influenza \n\t4.Leptosprirosis"
-    dog2 = "\n\t5.Lyme Disease \n\t6.Rabies \n\t7.Full Package \n\t8.NONE"
+    global pet_vax_type, num_chews, pet_type
+    pet_type = "DOG"
+    dog1 = "\n** Dog Vaccines: \n\t1.Bordatella     ($30.00)\n\t2.DAPP           ($35.00)\n\t3.Influenza      ($48.00)\n\t4.Leptosprirosis ($21.00)"
+    dog2 = "\n\t5.Lyme Disease   ($41.00)\n\t6.Rabies         ($25.00)\n\t7.Full Package   ($170.00; 15% OFF!)\n\t8.NONE"
     dogmenu = dog1 + dog2
     pet_vax_type = int(input(dogmenu + "\n** Enter the vaccine number: "))
 
     print("\nMonthly heart worm prevenion medication is recommended for all dogs.")
-    heart_yesno = input("Would you like to order monthly heartworm medication for " + pet_name + " (Y/N)? ")
+    heart_yesno = input("Would you like to order monthly heartworm medication for " + pet_name.upper() + " (Y/N)? ")
     if heart_yesno.upper() == "Y":
         num_chews = int(input("How many heartworm chews would you like to order? "))
     else:
@@ -125,28 +129,29 @@ def perform_dog_calculations():
     total = vax_cost + chews_cost
 
 def display_dog_results():
-    print('---------------------------------------------------------------')
-    print('************************ PET CARE MEDS ************************')
-    print('                Your neighborhood animal house                 ')
-    print('---------------------------------------------------------------')
-    print('Animal Name:', pet_name.upper(), '\tPet Type is', pet_type.upper(), '\t Pet Weight is', pet_weight)
-    print('Vaccine Type is', vax_name, '         $' + format(vax_cost, '8,.2f'))
+    print('-----------------------------------------------------------------------')
+    print('**************************** PET CARE MEDS ****************************')
+    print('                     Your neighborhood animal house                    ')
+    print('-----------------------------------------------------------------------')
+    print('Animal Name:', pet_name.upper(), '\tPet Type is', pet_type, '\t Pet Weight is', pet_weight, 'pounds')
+    print('Vaccine Type is:', vax_name, '                $' + format(vax_cost, '8,.2f'))
     if num_chews != 0:
-        print('Chew Type is', chew_name, '                        $' + format(chews_cost, '8,.2f'))
-    print('Total                                                 $' + format(total, '8,.2f'))
-    print('---------------------------------------------------------------')
+        print('Chew Type is', chew_name, '                                $' + format(chews_cost, '8,.2f'))
+    print('Total                                                         $' + format(total, '8,.2f'))
+    print('-----------------------------------------------------------------------')
     print(str(datetime.datetime.now()))
 
 ##CAT functions##
 def get_cat_data():
-    global pet_vax_type, num_chews
-    cat1 = "\n** Cat Vaccines: \n\t1.Feline Leukemia \n\t2.Feline Viral Rhinotracheitis"
-    cat2 = "\n\t3.Rabis (one year) \n\t4.Full Package \n\t5.NONE"
+    global pet_vax_type, num_chews, pet_type
+    pet_type = "CAT"
+    cat1 = "\n** Cat Vaccines: \n\t1.Feline Leukemia              ($35.00)\n\t2.Feline Viral Rhinotracheitis ($30.00)"
+    cat2 = "\n\t3.Rabis (one year)             ($25.00)\n\t4.Full Package                 ($81.00; 10% OFF!)\n\t5.NONE"
     catmenu = cat1 + cat2
     pet_vax_type = int(input(catmenu + "\n** Enter the vaccine number: "))
 
     print("\nMonthly heart worm prevenion medication is recommended for all cats.")
-    heart_yesno = input("Would you like to order monthly heartworm medication for " + pet_name + " (Y/N)? ")
+    heart_yesno = input("Would you like to order monthly heartworm medication for " + pet_name.upper() + " (Y/N)? ")
     if heart_yesno.upper() == "Y":
         num_chews = int(input("How many heartworm chews would you like to order? "))
     else:
@@ -166,7 +171,7 @@ def perform_cat_calculations():
 
     elif pet_vax_type == 3:
         vax_cost = PR_CATRAB
-        vax_name = "Rabis (one year)            "
+        vax_name = "Rabies (one year)           "
 
     elif pet_vax_type == 4:
         PR_ALL = PR_FELU + PR_FEVIRH + PR_CATRAB
@@ -186,16 +191,16 @@ def perform_cat_calculations():
     total = vax_cost + chews_cost
 
 def display_cat_results():
-    print('---------------------------------------------------------------')
-    print('************************ PET CARE MEDS ************************')
-    print('                Your neighborhood animal house                 ')
-    print('---------------------------------------------------------------')
-    print('Animal Name:', pet_name.upper(), '\tPet Type is', pet_type.upper(), '\t Pet Weight is', pet_weight)
-    print('Vaccine Type is', vax_name, '         $' + format(vax_cost, '8,.2f'))
+    print('-----------------------------------------------------------------------')
+    print('**************************** PET CARE MEDS ****************************')
+    print('                     Your neighborhood animal house                    ')
+    print('-----------------------------------------------------------------------')
+    print('Animal Name:', pet_name.upper(), '\tPet Type is', pet_type, '\t Pet Weight is', pet_weight, 'pounds')
+    print('Vaccine Type is:', vax_name, '                $' + format(vax_cost, '8,.2f'))
     if num_chews != 0:
-        print('Feline Chews                                          $' + format(chews_cost, '8,.2f'))
-    print('Total                                                 $' + format(total, '8,.2f'))
-    print('---------------------------------------------------------------')
+        print('Feline Chews                                                  $' + format(chews_cost, '8,.2f'))
+    print('Total                                                         $' + format(total, '8,.2f'))
+    print('-----------------------------------------------------------------------')
     print(str(datetime.datetime.now()))
 
 main()
