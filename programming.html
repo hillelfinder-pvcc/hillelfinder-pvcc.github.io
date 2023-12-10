@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--Name: Hillel Finder-->
+<!--Program Purpose: This program gives some information about Programmings-->
+
+<head>
+    <title>All About Programming</title>
+    <style>
+        h1{color: #91c3bb; font-family:'Courier New', Courier, monospace; font-size: xx-large; text-align: center;}
+        td{color: #e2763f; font-family:Georgia, 'Times New Roman', Times, serif; font-size: large; font-stretch: expanded;}
+        li{color: #cbd5cd; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; text-align: start;}
+
+        a{text-decoration: wavy; font-family:'Segoe UI', Tahoma, Verdana, sans-serif; font-size: large;}
+        a:link{color: #02b202;}
+        a:visited{color: #296acb;}
+        a:hover{color: #ff0000; text-decoration: underline;}
+        a:active{color: #e739ad; text-decoration: underline;}
+    </style>
+</head>
+
+<body style="background-color: #921538; font-family: Verdana, Geneva, Tahoma; background-image: url(programmingimage2.png); background-size: 500px 300px;">
+    <table border="10" style="width:30%; color: #921538; background-color: #921538; margin: auto;">
+        <tr style="background-color: #dee7f7;">
+            <!--For Local-->
+            <td><a href="../index/index.html">Home</a></td>
+            <td><a href="https://www.pvcc.edu">PVCC</a></td>
+            <td><a href="https://www.w3schools.com/">W3 Schools</a></td>
+            <td><a href="https://github.com/">Github</a></td>
+            <td><a href="../contact/contactus.html">Contact Us</a></td>
+        
+            <!--For Github:
+            <td><a href="index.html">Home</a></td>
+            <td><a href="https://www.pvcc.edu">PVCC</a></td>
+            <td><a href="https://www.w3schools.com/">W3 Schools</a></td>
+            <td><a href="https://github.com/">Github</a></td>
+            <td><a href="contactus.html">Contact Us</a></td>-->
+        
+        <tr><td colspan="5">
+            <h1>Chapter 5: Programming Algorithhms & Software Testing</h1>
+            <table border="2" style="background-color: #373737; text-align: left;" width="725">
+
+                <tr> <!--1-->
+                    <td>
+                    Phases of Computer Program Development:
+                        <ul>
+                        <li>Phase 1: Understand the problem</li>
+                        <li>Phase 2: Design an algorithm to solve the problem</li>
+                        <li>Phase 3: Write the program code in appropriate language based on the algorithm</li>
+                        <li>Phase 4: Enter the program and save</li>
+                        <li>Phase 5: Execute the program</li>
+                        <li>Phase 6: Test and program, find errors and debug, then retest</li>
+                        <li>Phase 7: Document and evaluate the process</li>
+                        </ul>
+                    </td>
+                </tr> <!--/1-->
+
+                <tr> <!--2-->
+                    <td>
+                    Programming structures:
+                        <ul>
+                        <li>Sequential structure: Top-down execution</li>
+                        <li>Decision structure: if/then/else</li>
+                        <li>Iteractive (Looping):</li>
+                            <ul>
+                            <li>While loop: continue looping as long as something is true</li>
+                            <li>Repeat/until loop: continue looping until something is true</li>
+                            <li>For loop: loop a give number of times</li>                         
+                            </ul>
+                        <li>Recursive structures:</li>
+                            <ul>
+                            <li>Repeat a set of instructions as a subtask of itself</li>
+                            <li>Repetition continues until:</li>
+                                <ul>
+                                <li>Degenerative case, which is a termination condition, is met (degenerative case is also called the “base case”)</li>
+                                </ul>
+                            </ul>
+                        </ul>
+                    </td>
+                </tr> <!--/2-->
+
+                <tr> <!--3-->
+                    <td>
+                    Two classic programming/ database problems:
+                        <ul>
+                        <li>Sorting: Descending order/ Ascending order</li>
+                            <ul>
+                            <li>Sorting numbers</li>
+                            <li>Sorting strings (in accordance with ASCII values)</li>
+                            </ul>
+                        <li>Searching: find specific date that meet a certain criteria</li>
+                            <ul>
+                            <li>In database:</li>
+                                <ul>
+                                <li>Filters: temporary search</li>
+                                <li>Queries: search criteria are saved so they don’t have to be recreated</li>
+                                </ul>
+                            </ul>
+                        <li>Two popular search techniques:</li>
+                            <ul>
+                            <li>Sequential search: search from top to bottom or bottom to top, one item at a time</li>
+                            <li>Binary search:</li>
+                                <ul>
+                                <li>Only works if data is SORTED first</li>
+                                <li>Start in the middle, then go to half of that, etc.</li>
+                                </ul>
+                            </ul>
+                        </ul>
+                    </td>
+                </tr> <!--/3-->
+
+                <tr> <!--4-->
+                    <td>
+                    Two classic program goals:
+                        <ul>
+                        <li>Efficiency: Program takes minimaal time and/or resources</li>
+                        <li>Correctness: Program runs in expected ways and works for all expected conditions</li>
+                        </ul>
+                    </td>
+                </tr> <!--/4-->
+                
+                <tr> <!--5-->
+                    <td>
+                    Software testing and verification
+                        <ul>
+                            <li>Kinds of tests:</li>
+                            <ul>
+                            <li>Acceptance testing: Verifying whether the whole system works as intended.</li>
+                            <li>Integration testing: Ensuring that software components or functions operate together.</li>
+                            <li>Unit testing: Validating that each software unit performs as expected. A unit is the smallest testable component of an application.</li>
+                            <li>Functional testing: Checking functions by emulating business scenarios, based on functional requirements. Black-box testing is a common way to verify functions.</li>
+                            <li>Performance testing: Testing how the software performs under different workloads. Load testing, for example, is used to evaluate performance under real-life load conditions.</li>
+                            <li>Regression testing: Checking whether new features break or degrade functionality. Sanity testing can be used to verify menus, functions and commands at the surface level, when there is no time for a full regression test.</li>
+                            <li>Stress testing: Testing how much strain the system can take before it fails. Considered to be a type of non-functional testing.</li>
+                            <li>Usability testing: Validating how well a customer can use a system or web application to complete a task.</li>
+                            </ul>
+                        <li>Software testing is done to detect:</li>
+                            <ul>
+                            <li>Architectural flaws</li>
+                            <li>Poor design decisions</li>
+                            <li>Invalid or incorrect functionality</li>
+                            <li>Security vulnerabilities</li>
+                            <li>Scalability issues</li>
+                            </ul>
+                        <li>Testing best practices:</li>
+                            <ul>
+                            <li>Continuous testing: Project teams test each build as it becomes available. This type of software testing relies on test automation that is integrated with the deployment process. It enables software to be validated in realistic test environments earlier in the process – improving design and reducing risks.</li>
+                            <li>Configuration management: Organizations centrally maintain test assets and track what software builds to test. Teams gain access to assets such as code, requirements, design documents, models, test scripts and test results. Good systems include user authentication and audit trails to help teams meet compliance requirements with minimal administrative effort.</li>
+                            <li>Service virtualization: Testing environments may not be available, especially early in code development. Service virtualization simulates the services and systems that are missing or not yet completed, enabling teams to reduce dependencies and test sooner. They can reuse, deploy and change a configuration to test different scenarios without having to modify the original environment.</li>
+                            <li>Defect or bug tracking: Monitoring defects is important to both testing and development teams for measuring and improving quality. Automated tools allow teams to track defects, measure their scope and impact, and uncover related issues.</li>
+                            <li>Metrics and reporting: Reporting and analytics enable team members to share status, goals and test results. Advanced tools integrate project metrics and present results in a dashboard. Teams quickly see the overall health of a project and can monitor relationships between test, development and other project elements.</li>
+                            </ul>
+                        <li><a href="https://www.ibm.com/topics/software-testing">From: IBM what is software testing?</a></li>
+                        </ul>
+                    </td>
+                </tr> <!--/5-->
+                
+                <tr><td>
+                    <img src="programmingimage1.png" style="width: 100%; display: block; margin: auto;">
+                </td></tr>
+            </table>
+    </table>
+</body>
+</html>
