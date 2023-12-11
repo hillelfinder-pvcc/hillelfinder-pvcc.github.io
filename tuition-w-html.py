@@ -1,6 +1,5 @@
 #Name: Hillel Finder
-#Name: Ethan Mallon
-#Prog Purpose: the program comuters PVCC college tuition & fees based on number of credits
+#Prog Purpose: the program comuters PVCC college tuition & fees based on number of credits, output as an HTML file
 #   PVCC FEE Rates are from: https://www.pvcc.edu/tuition-and-fees
 
 import datetime
@@ -25,7 +24,7 @@ total = 0
 balance = 0
 
 # create output file
-outfile = 'tickets.html'
+outfile = 'tuition.html'
 
 ##define program functions
 def main():
@@ -60,7 +59,7 @@ def open_outfile():
     f = open(outfile, 'w')
     f.write('<html> <head> <title> PVCC Tuition </title>\n')
     f.write('<style> td{text-align: right} </style> </head>\n')
-    f.write('<body style ="background-color: #985b45; background-image: url(wp-cinema.png); color: #f8dd61;">\n')
+    f.write('<body style ="background-color: #ffffff; background-image: url(Piedmont_VA_Comm_College_logo.jpeg); background-size: 250px 250px; color: #d5414f;">\n')
     
 def get_user_data():
     global inout, numcredits, scholarshipamt
@@ -91,25 +90,29 @@ def output_results():
     day_time = today[0:16]
 
     tr = '<tr><td>'
+    trlj = '<tr><td style=text-align:left>'
     endtd = '</td><td>'
     endtr = '</td></tr>\n'
     sp = " "
 
-    f.write('\n<table border="3"   style ="background-color: #47161a;  font-family: arial; margin: auto;">\n')            
+    #style="background-color: #418cd0;"
+
+    f.write('\n<table border="3" style ="background-color: #ffffff;  font-family: arial, Tahoma, Verdana,; margin: auto;">\n')            
+
+    f.write('<tr style="background-color: #418cd0;"><td colspan = 3><h3></h3></tr>')
     f.write('<tr><td colspan = 3>\n')
     f.write('<h2>-*-*-*-*-*- PVCC -*-*-*-*-*-</h2></td></tr>')
-    f.write('<tr><td colspan = 3>\n')
 
-    f.write(tr + 'Tuition Type is ' + endtd + tuition_type + endtr)
-    f.write(tr + 'Tuition Amount:' + endtd + format(full_tut,"8,.2f") + endtr)
+    f.write(trlj + 'Tuition Type is: ' + endtd + tuition_type + endtr)
+    f.write(trlj + 'Tuition Amount' + endtd + format(full_tut,"8,.2f") + endtr)
     if inout == 2:
-        f.write(tr + 'Capital Fee:' + endtd + format(full_cap,"8,.2f") + endtr)
-    f.write(tr + 'Activity Fee:' + endtd + format(full_act,"8,.2f") + endtr)
-    f.write(tr + 'Total:' + endtd + format(total,"8,.2f") + endtr)
-    f.write(tr + 'Scholarship:' + endtd + format(scholarshipamt,"8,.2f") + endtr)
-    f.write(tr + 'Balance:' + endtd + format(balance,"8,.2f") + endtr)
+        f.write(trlj + 'Capital Fee' + endtd + format(full_cap,"8,.2f") + endtr)
+    f.write(trlj + 'Activity Fee' + endtd + format(full_act,"8,.2f") + endtr)
+    f.write(trlj + 'Total' + endtd + format(total,"8,.2f") + endtr)
+    f.write(trlj + 'Scholarship:' + endtd + format(scholarshipamt,"8,.2f") + endtr)
+    f.write(trlj + 'Balance:' + endtd + format(balance,"8,.2f") + endtr)
 
-    f.write('<tr><td colspan= "3">Date/Time: ')
+    f.write('<tr><td colspan= "3" style=text-align:center>Date/Time: ')
     f.write(day_time)
     f.write(endtr)
     f.write('</table><br />')
